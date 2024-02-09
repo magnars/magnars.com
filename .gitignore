@@ -1,0 +1,7 @@
+/.cpcache/
+/.nrepl-port
+/docker/build/
+/.clj-kondo/
+/tf/.terraform*
+/.lsp
+.DS_Store

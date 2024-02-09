@@ -1,0 +1,73 @@
+[{:db/ident :tag/id
+  :db/valueType :db.type/keyword
+  :db/unique :db.unique/identity
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :tag/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :series/id
+  :db/valueType :db.type/keyword
+  :db/unique :db.unique/identity
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :series/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :series/sequential?
+  :db/valueType :db.type/boolean
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :series/description
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :series/blurb
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/title
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/description
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/published
+  :dte/valueType :java.time/local-date-time
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/updated
+  :dte/valueType :java.time/local-date-time
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/tags
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many}
+
+ {:db/ident :blog-post/image
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/introduction
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/body
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/series
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/original
+  :dte/valueType :data/edn
+  :db/cardinality :db.cardinality/one}
+
+ {:db/ident :blog-post/vcard-photo
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one}]
