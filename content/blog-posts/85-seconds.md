@@ -1,4 +1,4 @@
-:page/title The Hunt for the Missing 85 Seconds
+:page/title The Hunt for the Missing 85 Seconds
 :blog-post/published #time/ldt "2023-12-12T09:00:00"
 :blog-post/tags [:observability :ops]
 :blog-post/original
@@ -63,7 +63,7 @@ thing became very clear:
 
 It was not network trouble.
 
-## 85 Seconds
+## 85 Seconds
 
 The first request reached the server as intended, but the client gave up waiting
 after a 4-second timeout and tried again.
@@ -91,7 +91,7 @@ The player was advised to try again a little later. Click! Try again.
 *It was still working on the first request.*
 
 In fact, the server would continue working on the first request for an
-incredible **85 seconds**. No wonder I got messages saying "the server is
+incredible **85 seconds**. No wonder I got messages saying "the server is
 lagging."
 
 ## There's Something Wrong That Isn't Right
@@ -174,7 +174,7 @@ structure.
 
 You achieve observability when you collect these in large enough quantities, and
 with tools that help you find patterns in these vast data sets. This wasn't what
-I did to find the 85 seconds, but the book had given me an idea.
+I did to find the 85 seconds, but the book had given me an idea.
 
 ## Homebrew Spans
 
@@ -211,7 +211,7 @@ Hold on tight.
 
 Come again?
 
-The timeline is completely dominated by the 85 seconds, but there are no child
+The timeline is completely dominated by the 85 seconds, but there are no child
 spans that will own up to the time...?
 
 A bit further down, we see something more:
@@ -236,7 +236,7 @@ Why is that?
 Because it was a feature that I had turned off three years ago.
 
 When I finally wrapped a `with-span` around it too, it glared back at me with
-its endlessly long 85 seconds.
+its endlessly long 85 seconds.
 
 Here's how it went down: About 1 in 25,000 requests managed the feat of
 running this old code -- *to no effect* -- (since the feature was turned off) and

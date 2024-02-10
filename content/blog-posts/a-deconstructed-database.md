@@ -15,7 +15,7 @@ database split right down the middle.
 
 :blog-post/body
 
-In a [previous tidbit](/smak-av-datomic/), we discussed how Datomic
+In a [previous tidbit](/an-explosion-of-data/), we discussed how Datomic
 differs from traditional databases in the way it models data - not in tables
 with rows and columns, but in terms of entities and attributes. Today's tidsbit
 addresses an entirely different aspect, where Datomic also takes a radically
@@ -95,7 +95,7 @@ It's clear that the index is sorted alphabetically, and that some players of
 my game do not have the best imagination when it comes to names.
 
 So, here are datoms, tuples of `[e a v t]` (more on this in [the previous
-tidbit](/taste-of-datomic/)). The attribute might be the hardest to recognize
+tidbit](/an-explosion-of-data/)). The attribute might be the hardest to recognize
 because it is represented by its database ID, `65`, which is the sequence number
 `:player/name` has been assigned.
 

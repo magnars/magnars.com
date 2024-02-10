@@ -5,3 +5,4 @@
 /tf/.terraform*
 /.lsp
 .DS_Store
+/build/

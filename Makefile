@@ -1,4 +1,7 @@
 test:
 	clojure -M:dev -m kaocha.runner
 
-.PHONY: test
+build:
+	clojure -X:dev:build
+
+.PHONY: test build
