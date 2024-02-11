@@ -9,8 +9,8 @@
 :blog-post/description
 
 Dice games are far more enjoyable if you can see the dice roll, so I rolled up
-my sleeves and wrote some CSS in preparation for the presentation. Here's what I
-learned about rolling dice with CSS.
+my sleeves and wrote some CSS in preparation for Parens of the Dead. Here's what
+I learned about rolling dice with CSS.
 
 :blog-post/body
 
