@@ -33,7 +33,7 @@
   [:html {:lang "en"}
    [:head
     [:title title]
-    [:meta {:name "theme-color" :content "#222"}]
+    [:meta {:name "theme-color" :content "#111"}]
     [:link {:href "/atom.xml" :rel "alternate" :title "magnars.com" :type "application/atom+xml"}]]
    [:body
     forms]])
@@ -47,7 +47,7 @@
     [:div.content.info-section
      [:div.section-content.text-content
       [:p "Greetings! I am Magnar Sveen and this is my technical blog on topics such as Clojure, Datomic, functional programming, frontend development, architecture, and more."]
-      [:p "You might also know me from the video series "
+      [:p "You might know me from the video series "
        [:a {:href "https://emacsrocks.com"} "Emacs Rocks!"] " or "
        [:a {:href "https://www.parens-of-the-dead.com"} "Parens of the Dead"] ", "
        " or maybe one of my "
