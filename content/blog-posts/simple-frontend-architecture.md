@@ -1,6 +1,6 @@
 :page/title A Simple Frontend Architecture That Works
 :blog-post/published #time/ldt "2020-01-29T09:00:00"
-:blog-post/tags [:design :clojure :functional-programming]
+:blog-post/tags [:frontend :design :functional-programming]
 :blog-post/original
 
 {:blog "Kodemaker"
