@@ -3,4 +3,5 @@
             [powerpack.export :as export]))
 
 (defn ^:export export [& _args]
-  (export/export! (magnars/create-app)))
+  (export/export! (magnars/create-app))
+  (System/exit 0))

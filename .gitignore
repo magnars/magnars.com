@@ -6,3 +6,4 @@
 /.lsp
 .DS_Store
 /build/
+/target/
