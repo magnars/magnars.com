@@ -74,17 +74,17 @@ data into UI data. The UI data is then rendered using generic components.
 
 ## Data Flow
 
-Your data reaches the client in some way. I won't delve into how in this blog
-post, other than to say that it's not the components themselves fetching it.
-Maybe you're fetching them with GraphQL, or WebSockets, or some GET requests -
+Your data reaches the client in some way. I won't go into details in this blog
+post, other than to say that the components themselves should not be fetching it.
+Maybe you're fetching data with GraphQL, or WebSockets, or some GET requests -
 as long as it's done centrally, that's fine.
 
-Once you have the data, they are gathered at a top-level location defined by the
-main function. This could be in [a database](https://github.com/tonsky/datascript), in an
-[atom](https://clojure.org/reference/atoms), or if necessary, in a JavaScript
-object.
+Once you have the data, it is kept in a top-level location defined by the main
+function. This could be in [a database](https://github.com/tonsky/datascript),
+in an [atom](https://clojure.org/reference/atoms), or if necessary, in a
+JavaScript object.
 
-Regardless, you need to know when the data changes so that an update of the UI
+Either way, you need to know when the data changes so that an update of the UI
 can be initiated.
 
 When this happens, a `prepare` function is called with all the data,
