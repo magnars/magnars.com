@@ -4,5 +4,5 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/data.xml "0.0.8"]
                  [clygments "2.0.2"]
-                 [no.cjohansen/powerpack "2024.01.31"]]
+                 [no.cjohansen/powerpack "2024.05.31"]]
   :jvm-opts ["-Djava.awt.headless=true"])
