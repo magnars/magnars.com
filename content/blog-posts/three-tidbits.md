@@ -91,7 +91,7 @@ like this:
 
 Again, we’re using upserts — two of them this time. If a `poststed` with that postal code already exists, it’s reused — but enriched with name and municipality. If a municipality with that code already exists, it’s reused as well.
 
-And just like that, we’ve stitched together restaurants → via poststed → to
+And just like that, we’ve stitched together restaurants → via postal place → to
 municipality — all through upserts, without me having to “do anything” to wire
 it up.
 
@@ -159,7 +159,7 @@ address-related fields in the index. Here’s the relevant code:
        (str/join " ")))
 ```
 
-Oh no, this function receives only `restaurant` -- the restaurant. No database to
+Oh no, this function receives only the `restaurant`. No database to
 look up the municipality anywhere in sight.
 
 Think for a second — how would *you* go about also passing the municipality down
