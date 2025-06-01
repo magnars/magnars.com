@@ -83,7 +83,7 @@ like this:
 ```clj
 {:poststed/postnummer (:postnummer m)
  :poststed/navn (:poststed m)
- :poststed/kommune {:kommune/kode (:kommunekode m)
+ :poststed/kommune {:kommune/nummer (:kommunekode m)
                     :kommune/navn (:kommunenavn m)}}
 
 ;; kommune = municipality
@@ -111,7 +111,7 @@ them](https://cjohansen.no/keys/), you saw an example of this in action:
 
 ```clj
 {:db/id 17592186046486
- :kommune/kode "3107"
+ :kommune/nummer "3107"
  :kommune/navn "Fredrikstad"
  :page/uri "/kommune/fredrikstad/"
  :page/kind :page.kind/kommune-page}
