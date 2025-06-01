@@ -9,9 +9,9 @@
 
 :blog-post/description
 
-When we recently added individual pages for each municipality to the new food
-safety poster site, I caught myself chuckling with satisfaction more than once.
-It was a good day in the company of Datomic.
+When we recently added pages for each municipality to the new food safety poster
+site, I caught myself chuckling with satisfaction more than once. It was a good
+day in the company of Datomic.
 
 :blog-post/body
 
