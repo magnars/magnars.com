@@ -42,9 +42,9 @@ parsing looked (mostly) like this:
 ```clj
 (let [m (zipmap csv-header csv-line)]
   {,,,
-   :spisested/navn (:navn m) ;; spisested = restaurant :)
-   :spisested/orgnummer (:orgnummer m)
-   :spisested/poststed {:poststed/postnummer (:postnr m)}
+   :restaurant/navn (:navn m)
+   :restaurant/orgnummer (:orgnummer m)
+   :restaurant/poststed {:poststed/postnummer (:postnr m)}
    ,,,})
 ```
 
@@ -71,7 +71,7 @@ Datomic hanldes identity attributes differently, so this line ...
 And because the `poststed` is declared like this ...
 
 ```clj
- :spisested/poststed {:poststed/postnummer (:postnr m)}
+ :restaurant/poststed {:poststed/postnummer (:postnr m)}
 ```
 
 ... it gets automatically linked to the restaurant.
@@ -151,15 +151,15 @@ page. The municipality name was a good search candidate alongside other
 address-related fields in the index. Here’s the relevant code:
 
 ```clj
-(defn get-searchable-address [spisested]
-  (->> [(-> spisested :spisested/adresse :poststed)
-        (-> spisested :spisested/adresse :linje1)
-        (-> spisested :spisested/adresse :linje2)]
+(defn get-searchable-address [restaurant]
+  (->> [(-> restaurant :restaurant/adresse :poststed)
+        (-> restaurant :restaurant/adresse :linje1)
+        (-> restaurant :restaurant/adresse :linje2)]
        (remove empty?)
        (str/join " ")))
 ```
 
-Oh no, this function receives only `spisested` -- the restaurant. No database to
+Oh no, this function receives only `restaurant` -- the restaurant. No database to
 look up the municipality anywhere in sight.
 
 Think for a second — how would *you* go about also passing the municipality down
@@ -168,7 +168,7 @@ to this function?
 Maybe you’d have to add a JOIN to a SQL query elsewhere? In that case, you’d be
 looking at a double join: from restaurant to postal place to municipality.
 
-Maybe you’d add the municipality name to some kind of DTO or `Spisested` object?
+Maybe you’d add the municipality name to some kind of DTO or `Restaurant` object?
 
 Maybe you’d just pass both the restaurant and the municipality into the
 function?
@@ -176,11 +176,11 @@ function?
 Okay, enough daydreaming. Here’s what we actually ended up with:
 
 ```clj
-(defn get-searchable-address [spisested]
-  (->> [(-> spisested :spisested/adresse :poststed)
-        (-> spisested :spisested/adresse :linje1)
-        (-> spisested :spisested/adresse :linje2)
-        (-> spisested :spisested/poststed :poststed/kommune :kommune/navn)]
+(defn get-searchable-address [restaurant]
+  (->> [(-> restaurant :restaurant/adresse :poststed)
+        (-> restaurant :restaurant/adresse :linje1)
+        (-> restaurant :restaurant/adresse :linje2)
+        (-> restaurant :restaurant/poststed :poststed/kommune :kommune/navn)]
        (filter not-empty)
        (str/join " ")))
 ```
